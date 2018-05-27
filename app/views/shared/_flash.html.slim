@@ -1,0 +1,5 @@
+.flash-wrapper
+  - flash.each do |severity, message|
+    - severity = 'info' if severity == 'notice'
+    div class="alert alert-#{severity}" role="alert"
+      = message
