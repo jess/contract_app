@@ -21,6 +21,9 @@ gem "pundit"
 gem "simple_form"
 gem "slim-rails"
 gem "pretender"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 #gem "carrierwave"
 #gem "fog-aws"
