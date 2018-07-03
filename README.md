@@ -16,6 +16,7 @@ squawking we need to uncomment the 10th line in
 `config/initializers/devise.rb` referencing `config.secret_key`
 
 Then run:
+
     rm config/credentials.yml.enc # will regenerate
     bin/rails credentials:edit # once open, just save and close
 
