@@ -2,11 +2,11 @@
 
 This is a template app. Steps to get started:
 
-    git clone git@github.com:jess/brown_template.git
+    git clone git@github.com:jess/contract_app.git
     bundle install
     yarn install
 
-Rename all references of `BrownTemplate` or `brown_template` to whatever
+Rename all references of `ContractApp` or `contract_app` to whatever
 you want your app name to be.
 
 Commit your changes.
