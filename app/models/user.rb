@@ -16,7 +16,7 @@ class User < ApplicationRecord
     user = User.find_by(provider_column => auth.uid)
     if user.blank?
       user = User.find_by(email: auth.info.email)
-      user.update(provider_column => auth.uid)
+      user.update(provider_column => auth.uid) if user.present?
     end
     if user.blank?
       user = User.new
