@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a template app. Steps to get started:
 
-Things you may want to cover:
+    git clone git@github.com:jess/brown_template.git
+    bundle install
 
-* Ruby version
+Rename all references of `BrownTemplate` or `brown_template` to whatever
+you want your app name to be.
 
-* System dependencies
+To regenerate the credentials file, we need to keep Devise from
+squawking we need to uncomment the 10th line in
+`config/initializers/devise.rb` referencing `config.secret_key`
 
-* Configuration
+Then run:
 
-* Database creation
+    bin/rails credentials:edit
 
-* Database initialization
+This will generate your master key file and encrypted credentials
+file. You can add the comment back to the devise file.
 
-* How to run the test suite
+Now run your normal `rake db:create db:migrate` and you're good to go.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Now you can pull in branches of the features you want.
