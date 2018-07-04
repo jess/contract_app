@@ -5,6 +5,9 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
+  has_many :user_contracts
+  has_many :contracts, through: :user_contracts
+
   PROVIDERS = {
     google_oauth2: "googleid",
     facebook: "facebookid",
