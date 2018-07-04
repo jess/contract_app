@@ -26,7 +26,6 @@ class ContractsController < ProtectedController
   # POST /contracts.json
   def create
     @contract = Contract.new(contract_params)
-    @contract.users << current_user
     authorize @contract
 
     respond_to do |format|
