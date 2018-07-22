@@ -14,7 +14,8 @@ class ContractsController < ProtectedController
 
   # GET /contracts/new
   def new
-    @contract = Contract.new
+    @contract = Contract.create(name: "New name...", users: [current_user])
+    redirect_to @contract
     authorize @contract
   end
 
@@ -73,6 +74,6 @@ class ContractsController < ProtectedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contract_params
-      params.require(:contract).permit(:content)
+      params.require(:contract).permit(:content, :name)
     end
 end

@@ -1,9 +1,9 @@
 h1 My Contracts
 
-table
+table.table
   thead
     tr
-      th Content
+      th Name
       th
       th
       th
@@ -11,11 +11,8 @@ table
   tbody
     - @contracts.each do |contract|
       tr
-        td = contract.content
-        td = link_to 'Show', contract
-        td = link_to 'Edit', edit_contract_path(contract)
-        td = link_to 'Destroy', contract, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to contract.name, contract
 
 br
 
-= link_to 'New Contract', new_contract_path
+= link_to 'New Contract', new_contract_path, class: 'btn btn-primary'
