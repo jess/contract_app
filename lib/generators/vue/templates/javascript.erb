@@ -1,0 +1,11 @@
+// This is javscript code, which uses ERB tags for templating
+// All the methods will be invoked and their values will be interpolated
+
+import Vue from 'vue';
+import <%= js_file_name %> from 'views/<%= name %>';
+
+const el = document.getElementById("<%= vue_component_kebab_name %>")
+const app = new Vue({
+  el,
+  render: h => h(<%= js_file_name %>)
+})
