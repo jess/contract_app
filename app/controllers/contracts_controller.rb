@@ -74,6 +74,8 @@ class ContractsController < ProtectedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contract_params
-      params.require(:contract).permit(:content, :name)
+      load_params = params.require(:contract).permit(:content, :name)
+      load_params[:custom_fields] = params[:contract][:custom_fields] if params[:contract][:custom_fields].present?
+      load_params.permit!
     end
 end
