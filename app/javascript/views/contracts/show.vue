@@ -42,7 +42,8 @@
       </div>
       <div class="col-md-6">
         <h3> {{contract.name}} </h3>
-        <div v-html="markdownContent"></div>
+        <hr>
+        <rendered-contract :contract="contract"></rendered-contract>
       </div>
     </div>
   </div>
@@ -50,7 +51,7 @@
 
 <script>
   import axios from 'axios'
-  import showdown from 'showdown'
+  import RenderedContract from 'views/contracts/rendered_contract'
   let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json'
@@ -66,10 +67,9 @@
       }
     },
     computed: {
-      markdownContent: function() {
-        var converter = new showdown.Converter();
-        return converter.makeHtml(this.contract.content);
-      }
+    },
+    components: {
+      RenderedContract
     },
     methods: {
       removeField: function(i) {
