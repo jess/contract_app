@@ -14,9 +14,17 @@ class ContractsController < ProtectedController
 
   # GET /contracts/new
   def new
-    @contract = Contract.create(name: "New name...", users: [current_user])
+    if params[:contract_id].present?
+      dup_contract = Contract.find params[:contract_id]
+      authorize dup_contract, :manage?
+      @contract = dup_contract.dup
+      @contract.save
+      @contract.users << current_user
+    else
+      authorize Contract, :new?
+      @contract = Contract.create(name: "New name...", users: [current_user])
+    end
     redirect_to @contract
-    authorize @contract
   end
 
   # GET /contracts/1/edit

@@ -1,3 +1,7 @@
+<p class="text-right">
+<%= link_to "Duplicate", new_contract_path(contract_id: @contract.id) %>
+<%= link_to "Delete", contract_path(@contract), method: :delete, data: {confirm: "Are you sure?"} %>
+</p>
 <div id="contracts-show-view"></div>
 
 <%= stylesheet_pack_tag 'contracts/show' %>
