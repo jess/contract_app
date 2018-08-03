@@ -52,6 +52,7 @@
 <script>
   import axios from 'axios'
   import RenderedContract from 'views/contracts/rendered_contract'
+  import alertify from 'alertifyjs'
   let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
   axios.defaults.headers.common['X-CSRF-Token'] = token
   axios.defaults.headers.common['Accept'] = 'application/json'
@@ -90,6 +91,7 @@
         })
         .then(function (response) {
           t.contract = response.data
+          alertify.success('Saved!');
         })
         .catch(function (error) {
           console.log(error);

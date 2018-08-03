@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "alertifyjs": "^1.11.1",
     "axios": "^0.18.0",
     "showdown": "^1.8.6",
     "vue": "^2.5.16",
