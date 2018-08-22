@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_004448) do
+ActiveRecord::Schema.define(version: 2018_08_04_192135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2018_07_25_004448) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.json "custom_fields"
+    t.string "share_token"
+    t.boolean "is_sharing"
+    t.index ["share_token"], name: "index_contracts_on_share_token"
   end
 
   create_table "user_contracts", force: :cascade do |t|
