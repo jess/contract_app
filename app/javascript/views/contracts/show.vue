@@ -12,6 +12,10 @@
             <label for="name"> Share Contract?  </label>
           </div>
           <a :href="contract.share_url" v-if="contract.is_sharing">{{contract.share_url}}</a>
+          <template v-if="contract.is_signed">
+            <p>Signed by: {{contract.signer_name}}</p>
+            <p><img :src="contract.signature"></p>
+          </template>
           <div class="form-group">
             <label for="name">Content</label>
             <textarea v-model="contract.content" class="form-control" id="content" aria-describedby="content" placeholder="Enter content"></textarea>

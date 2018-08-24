@@ -6,6 +6,7 @@
     "alertifyjs": "^1.11.1",
     "axios": "^0.18.0",
     "showdown": "^1.8.6",
+    "signature_pad": "^3.0.0-beta.3",
     "vue": "^2.5.16",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.16"

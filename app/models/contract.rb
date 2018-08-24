@@ -4,6 +4,10 @@ class Contract < ApplicationRecord
 
   before_save :set_sharing
 
+  def is_signed
+    signature.present? && signer_name.present?
+  end
+
   private
 
   def set_sharing
