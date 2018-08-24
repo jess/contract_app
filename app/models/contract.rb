@@ -8,6 +8,14 @@ class Contract < ApplicationRecord
     signature.present? && signer_name.present?
   end
 
+  def custom_fields
+    if super.present?
+      super
+    else
+      []
+    end
+  end
+
   private
 
   def set_sharing
