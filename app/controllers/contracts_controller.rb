@@ -18,6 +18,9 @@ class ContractsController < ProtectedController
       dup_contract = Contract.find params[:contract_id]
       authorize dup_contract, :manage?
       @contract = dup_contract.dup
+      @contract.signature = nil
+      @contract.signer_name = nil
+      @contract.is_sharing = false
       @contract.save
       @contract.users << current_user
     else
